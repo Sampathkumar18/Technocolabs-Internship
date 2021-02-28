@@ -94,7 +94,7 @@ We are using TPOT to help us zero in on one model that we can then explore and o
 
 **Checking the variance**
 
-TPOT picked LogisticRegression as the best model for our dataset with no pre-processing steps, giving us the AUC score of 0.7850. This is a great starting point. Let's see if we can make it better.
+TPOT picked ExtraTreesClassifier and LogisticRegression as the best models for our dataset with no pre-processing steps, giving us the AUC score of 76.7% for ExtraTreesClassifier. This is a great starting point. Let's see if we can make it better.
 
 One of the assumptions for linear regression models is that the data and the features we are giving it are related in a linear fashion, or can be measured with a linear distance metric. If a feature in our dataset has a high variance that's an order of magnitude or more greater than the other features, this could impact the model's ability to learn from other features in the dataset.
 
@@ -116,6 +116,13 @@ We are now ready to train the linear regression model.
 
 The demand for blood fluctuates throughout the year. As one prominent example, blood donations slow down during busy holiday seasons. An accurate forecast for the future supply of blood allows for an appropriate action to be taken ahead of time and therefore saving more lives.
 
-In this notebook, we explored automatic model selection using TPOT and AUC score we got was 0.7850. This is better than simply choosing 0 all the time (the target incidence suggests that such a model would have 76% success rate). We then log normalized our training data and improved the AUC score by 0.5%. In the field of machine learning, even small improvements in accuracy can be important, depending on the purpose.
+Here comparing TPOT AutoML's ExtraTreesClassifier Model(72.7%), Logistic Regression Model is providing better AUC Score of 79.6%.
+And Other Performance Metrics are,
 
-Another benefit of using logistic regression model is that it is interpretable. We can analyze how much of the variance in the response variable (target) can be explained by other variables in our dataset.
+    Accuracy: 0.7611111111111111 (76.1%)
+    
+    Precision: 0.7857142857142857 (78.6%)
+    
+    Recall: 0.21568627450980393 (21.6%)
+    
+ So we can go with Logistic Regression Model for predicting the bllod donors for future Expectancy.  
