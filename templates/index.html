@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Blood donation predictor
+        </title>
+    </head>
+    <body>
+
+        <div class="login">
+            <h1> Blood donation predictor </h1>
+
+            <form action = "{{ url_for('predict')}}" method="post">
+                <input type="text" name="Recency (months)" placeholder="Recency (months)" required="required"/>
+                <input type="text" name="Frequency (times)" placeholder="Frequency (times)" required="required"/>
+                <input type="text" name="Monetary (c.c. blood)" placeholder="Monetary (c.c. blood)" required="required"/>
+                <input type="text" name="Time (months)" placeholder="Time (months)" required="required"/>
+
+                <button type="submit" class="btn btn-primary btn-block btn-large"> predict </button>
+            </form>
+
+            <br>
+            <br>
+            {{ prediction_text }}
+
+        </div>
+    </body>
+</html>
